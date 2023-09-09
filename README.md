@@ -32,4 +32,13 @@ Script: `extract_yeardata_DAG.py`,`extract_daily.py`
 
 ## Scanning Stable Stock
 Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
--
+
+- The `stock_scan_dataproc.py` accesses the stock data by reading the file format 2023_data_currentdate.csv
+- This script is implemented in PySpark to enable parallel execution across multiple clusters within Dataproc, aiming to optimize performance and efficiency
+- The job is calculating the moving average 20 of the closing price in the last 3 months
+- A linear regression model has been applied to the moving average index over time, revealing a positive slope for the chosen stock where the stock exhibits a stable, consistent increase.
+- The `stock_scan_dataproc_DAG.py` generates an airflow pipeline that creates a cluster, submits the pyspark jobs then deletes the cluster afterward
+- it is schedules to runs daily by airflow
+
+
+  
