@@ -41,9 +41,15 @@ Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
 - it is scheduled to run daily by airflow
 
 ## Stock Subscriptions
-Script: `stock_subcribe_DAG.py`
+Script: `stock_subcribe_DAG.py`,`send_telegram_message_DAG`
 
--
+- These jobs allow subscribers to choose the stock they want to receive information from the stock they subscribe
+- The initial service utilized in this context is Pub/Sub. The Airflow DAG is configured to send selected stock information to Pub/Sub every hour, catering to the preferences of the customer.
+- A Google Cloud Function has been established with the purpose of decoding, converting, and pushing Pub/Sub messages into BigQuery whenever a new message is published. `pubsub2biguqery_cloudfunction`
+- Additionally, the data is dispatched to a Telegram chatbot on an hourly basis, with this action also initiated by the Airflow scheduling.
+  
+
+  
 
 
 
