@@ -22,9 +22,9 @@ Script: `extract_yeardata_DAG.py`,`extract_daily.py`
 - python-telegram-bot
 
 ## Extract Stock Data
-
-- The initial step involves obtaining yearly data from the provided API via the first pipeline.
-- The extracted yearly data is then stored in a designated storage location, following the naming convention: 2023_data_currentdate.csv. This naming convention facilitates daily data processing tasks.
-- Subsequently, the saved data is moved to the data warehouse within BigQuery for further analysis and reporting.
-- To conserve storage space, data from one day ago is regularly removed.
-- In addition to these tasks, daily data extraction is performed; however, this data is not transferred to BigQuery.
+- Stock data extraction occurs daily at 10 a.m. through the Airflow scheduling system.
+- The initial step involves obtaining yearly data from the provided API via the first pipeline
+-  The yearly extracted data is stored in a bucket with the format 2023_data_currentdate.csv
+-  The saved data is moved to the data warehouse within BigQuery for further analysis and reporting.\
+-  To conserve storage space, data from one day ago is regularly removed
+-  In addition to these tasks, daily data extraction is performed; however, this data is not transferred to BigQuery.
