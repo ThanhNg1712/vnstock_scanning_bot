@@ -1,3 +1,3 @@
 # vnstock_scanning_bot
 ![Project Pipeline](https://github.com/ThanhNg1712/vnstock_scanning_bot/raw/main/DEC-final_project.drawio.png)
-![DAGs](https://github.com/ThanhNg1712/vnstock_scanning_bot/raw/main/DEC-final_project.drawio.png)
+![DAGs](https://github.com/ThanhNg1712/vnstock_scanning_bot/blob/main/DAGs_vnstock.png)
