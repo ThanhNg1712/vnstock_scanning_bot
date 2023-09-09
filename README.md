@@ -1,18 +1,9 @@
 # vnstock_scanning_bot
 ![Project Pipeline](https://github.com/ThanhNg1712/vnstock_scanning_bot/raw/main/DEC-final_project.drawio.png)
 
-This project shows a tool to scan Viet Nam stocks from an open API
-Finding stable increasing stock by utilize linear regression, runs parralel in different cluster with pyspark in dataproc
+This project transforms the stock data landscape by seamlessly integrating data extraction, analysis, and real-time communication. Leveraging an open API:https://thinhvu.com/2022/09/22/vnstock-api-tai-du-lieu-chung-khoan-python/
 
-
-
-
-
-
-
-
-
-
+The data extraction process occurs daily at 10 a.m. and efficiently stores yearly data in a structured format for further analysis. It optimizes storage by routinely removing the previous day's data. The stock analysis component, powered by PySpark across Dataproc clusters, calculates the 20-day moving average and employs linear regression to identify stocks on a stable upward trajectory. Stock subscriptions are facilitated through Pub/Sub and Google Cloud Function, enabling users to customize their stock information preferences. Additionally, an hourly update to a Telegram chatbot enhances real-time communication. This project, combining data, automation, and real-time updates, offers a versatile approach to stock market insights.
 
 ![DAGs](https://github.com/ThanhNg1712/vnstock_scanning_bot/blob/main/DAGs_vnstock.png)
 
