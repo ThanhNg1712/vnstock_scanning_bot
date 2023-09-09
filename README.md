@@ -30,7 +30,7 @@ Script: `extract_yeardata_DAG.py`,`extract_daily.py`
 - To conserve storage space, data from one day ago is regularly removed
 - In addition to these tasks, daily data extraction is performed; however, this data is not transferred to BigQuery.
 
-## Scanning Stable Stock
+## Scanning Stable Stocks
 Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
 
 - The `stock_scan_dataproc.py` accesses the stock data by reading the file format 2023_data_currentdate.csv
@@ -38,7 +38,14 @@ Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
 - The job is calculating the moving average 20 of the closing price in the last 3 months
 - A linear regression model has been applied to the moving average index over time, revealing a positive slope for the chosen stock where the stock exhibits a stable, consistent increase.
 - The `stock_scan_dataproc_DAG.py` generates an airflow pipeline that creates a cluster, submits the pyspark jobs then deletes the cluster afterward
-- it is schedules to runs daily by airflow
+- it is scheduled to run daily by airflow
+
+## Stock Subscriptions
+Script: `stock_subcribe_DAG.py`
+
+-
+
+
 
 
   
