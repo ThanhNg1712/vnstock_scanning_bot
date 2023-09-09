@@ -32,13 +32,13 @@ dag = DAG(
 async def send_test_message(ticker, price, macd_signal):
     try:
         # Initialize the Telegram bot
-        telegram_notify = telegram.Bot("6628072675:AAFfDd-COUx8AT9jG96JLCiF5_5Axp6Al0I")  # Replace with your actual bot token
+        telegram_notify = telegram.Bot("your_telegram_token")  # Replace with your actual bot token
         
         # Create the message content
         message = f"`The '{ticker}' is good to buy at price {price} - MACD signal: {macd_signal}`"
 
         # Send the message
-        await telegram_notify.send_message(chat_id="-937396441", text=message, parse_mode='Markdown')
+        await telegram_notify.send_message(chat_id="your chatid", text=message, parse_mode='Markdown')
     except Exception as ex:
         print(ex)
 
