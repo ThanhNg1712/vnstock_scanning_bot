@@ -29,3 +29,7 @@ Script: `extract_yeardata_DAG.py`,`extract_daily.py`
 - The saved data is moved to the data warehouse within BigQuery for further analysis and reporting.
 - To conserve storage space, data from one day ago is regularly removed
 - In addition to these tasks, daily data extraction is performed; however, this data is not transferred to BigQuery.
+
+## Scanning Stable Stock
+Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
+-
