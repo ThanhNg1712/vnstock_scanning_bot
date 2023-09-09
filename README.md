@@ -38,7 +38,7 @@ Script: `stock_scan_dataproc.py`,`stock_scan_dataproc_DAG.py`
 - The job is calculating the moving average 20 of the closing price in the last 3 months
 - A linear regression model has been applied to the moving average index over time, revealing a positive slope for the chosen stock where the stock exhibits a stable, consistent increase.
 - The `stock_scan_dataproc_DAG.py` generates an airflow pipeline that creates a cluster, submits the pyspark jobs then deletes the cluster afterward
-- it is scheduled to run daily by airflow
+- It is scheduled to run daily by airflow
 
 ## Stock Subscriptions
 Script: `stock_subcribe_DAG.py`,`send_telegram_message_DAG`
@@ -48,6 +48,9 @@ Script: `stock_subcribe_DAG.py`,`send_telegram_message_DAG`
 - A Google Cloud Function has been established with the purpose of decoding, converting, and pushing Pub/Sub messages into BigQuery whenever a new message is published. `pubsub2biguqery_cloudfunction`
 - Additionally, the data is dispatched to a Telegram chatbot on an hourly basis, with this action also initiated by the Airflow scheduling.
   
+![Pub/Sub Message](https://github.com/ThanhNg1712/vnstock_scanning_bot/raw/main/pubsub_message.png)
+
+![Telegram Message](https://github.com/ThanhNg1712/vnstock_scanning_bot/raw/main/telegram_message.png)
 
   
 
